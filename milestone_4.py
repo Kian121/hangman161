@@ -26,7 +26,7 @@ class Hangman:
             if guess not in self.list_of_guesses:
                 self.num_letters -= 1
         else:
-            # Step 2: If the guess is not in the word
+            #If the guess is not in the word
             self.num_lives -= 1  # Reduce num_lives by 1
             print(f"Sorry, {guess} is not in the word.")
             print(f"You have {self.num_lives} lives left.")
@@ -47,12 +47,11 @@ class Hangman:
                 self.list_of_guesses.append(guess)
                 break
 
-# Example usage
-word_list = ["apple", "banana", "cherry"]
+
+word_list = ["Orange", "Mango", "Pineapple", "Raspberry", "grapefruit"]
 hangman_game = Hangman(word_list)
 
-# Testing the check_guess method
-# Note: This function call will not work in this environment due to input restrictions
+
 # hangman_game.ask_for_input()
 
 

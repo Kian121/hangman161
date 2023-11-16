@@ -48,10 +48,9 @@ class Hangman:
                 break
 
 # Example usage
-word_list = ["apple", "banana", "cherry"]
+word_list = ["Orange", "Mango", "Pineapple", "Raspberry", "grapefruit"]
 hangman_game = Hangman(word_list)
 
-# Testing the check_guess method
 # hangman_game.ask_for_input()
 
 
