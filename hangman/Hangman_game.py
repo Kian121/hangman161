@@ -8,8 +8,8 @@ class Hangman:
         self.num_lives = num_lives # Number of lives the player starts with
         self.list_letters = [] # List to keep track of guessed letters
 
-       # Prints the number of letters the mystery word has
-        print(f"The mystery word has {len(self.word)} characters")
+        # Prints the number of unique letters in the word
+        print(f"The mystery word has {self.num_letters} characters")
         print(' '.join(self.word_guessed))
 
     def check_letter(self, letter) -> None: # Converts the guessed letter to lowercase and checks if it is in the mystery word
@@ -17,13 +17,12 @@ class Hangman:
         if letter in self.word: # Updates the word_guessed list and reduces num_letters for a correct guess
             if letter not in self.list_letters:
                 self.num_letters -= 1
+                self.list_letters.append(letter)
             for i, char in enumerate(self.word):
                 if char == letter:
                     self.word_guessed[i] = letter
-            if letter not in self.list_letters:
-                self.list_letters.append(letter)
-        else:  # Reduces the number of lives by 1 if the guessed letter is not in the word 
-            self.num_lives -= 1 
+        else:
+            self.num_lives -= 1 # Reduces the number of lives by 1 if the guessed letter is not in the word 
             print(f"Sorry, {letter} is not in the word. You have {self.num_lives} lives left.")
 
     def ask_letter(self):   # Loop to keep asking player to guess a valid letter
@@ -37,19 +36,19 @@ class Hangman:
                 self.check_letter(letter)
                 break
 
-def play_game(word_list):  # Begins the game with the list of chosen words
+def play_game(word_list): # Begins the game with the list of chosen words
     game = Hangman(word_list, num_lives=5)
-    while True:  # Game loop that continues until the player wins or loses
-        if game.num_lives == 0:  # Prints message if player runs out of lives 
+    while True: # Game loop that continues until the player wins or loses
+        if game.num_lives == 0: # Prints message if player runs out of lives 
             print(f"You lost! The word was '{game.word}'.")
             break
-        elif game.num_letters == 0:   # Finishes the game if the player guesses correctl
+        elif game.num_letters == 0: # Finishes the game if the player guesses correctly
             print("Congratulations! You won!")
             break
-        else:   # Shows the correct guesses of the word and asks player to input the next letter
+        else: # Shows the correct guesses of the word and asks player to input the next letter
             print(' '.join(game.word_guessed))
             game.ask_letter()
-
+            
 if __name__ == '__main__':
     # List of words used for the Hangman game
     word_list = ["orange", "mango", "pineapple", "raspberry", "grapefruit"]
