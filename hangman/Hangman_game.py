@@ -2,53 +2,64 @@ import random
 
 class Hangman:
     def __init__(self, word_list, num_lives=5):
+        # Chooses a random word from the list and initialises the game variables
         self.word = random.choice(word_list).lower()
-        self.word_guessed = ['_' for _ in self.word]
-        self.num_lives = num_lives
-        self.list_of_guesses = []
+        self.word_guessed = ['_' for _ in self.word]  # List to track the guessed word
+        self.num_letters = len(set(self.word))  # Counts the unique letters in the word
+        self.num_lives = num_lives  # The number of lives the player starts with
+        self.list_letters = []  # List to keep track of guessed letters
+        
+        # Prints the number of letters the mystery word has
+        print(f"The mystery word has {self.num_letters} characters")
+        print(' '.join(self.word_guessed))
 
-    def check_guess(self, guess):
-        guess = guess.lower()
-        if guess in self.word:
-            print(f"Good guess! {guess} is in the word.")
-            for i, letter in enumerate(self.word):
-                if letter == guess:
-                    self.word_guessed[i] = guess
+    def check_letter(self, letter) -> None:
+        # Converts the guessed letter to lowercase
+        letter = letter.lower()
+        if letter in self.word:
+            if letter not in self.list_letters:
+                self.num_letters -= 1
+            # Shows which letter in the word has been guessed
+            for i, char in enumerate(self.word):
+                if char == letter:
+                    self.word_guessed[i] = letter
         else:
+            # Reduces the number of lives by 1 if the guessed letter is not in the word 
             self.num_lives -= 1
-            print(f"Sorry, {guess} is not in the word. You have {self.num_lives} lives left.")
+            print(f"Sorry, {letter} is not in the word. You have {self.num_lives} lives left.")
 
-    def ask_for_input(self):
+    def ask_letter(self):
+        # Loop to keep asking player to guess a valid letter
         while True:
-            guess = input("Guess a letter: ")
-            if not (len(guess) == 1 and guess.isalpha()):
-                print("Invalid letter. Please, enter a single alphabetical character.")
-            elif guess in self.list_of_guesses:
-                print("You already tried that letter!")
+            letter = input("Guess a letter: ")
+            if len(letter) != 1 or not letter.isalpha():
+                print("Please, enter just one character")
+            elif letter in self.list_letters:
+                print(f"{letter} was already tried")
             else:
-                self.list_of_guesses.append(guess)
-                self.check_guess(guess)
+                # Process the guessed letter and break the loop if it's a new guess
+                self.list_letters.append(letter)
+                self.check_letter(letter)
                 break
 
-    def has_won(self):
-        return all(letter in self.list_of_guesses for letter in self.word)
+def play_game(word_list):
+    # Begins the game with the list of chosen words
+    game = Hangman(word_list, num_lives=5)
+    while True:
+        if game.num_lives == 0:
+            # Prints message if player runs out of lives 
+            print(f"You lost! The word was '{game.word}'.")
+            break
+        elif '_' not in game.word_guessed:
+            # Finishes the game if the player guesses correctly 
+            print("Congratulations! You won!")
+            break
+        else:
+            # Shows the correct guesses of the word and asks player to input the next letter
+            print(' '.join(game.word_guessed))
+            game.ask_letter()
 
-    def play(self):
-        while True:
-            if self.num_lives == 0:
-                print(f"You lost! The word was '{self.word}'.")
-                break
-            elif self.has_won():
-                print(f"Congratulations. You won the game! The word was '{self.word}'.")
-                break
-            else:
-                print(' '.join(self.word_guessed))
-                self.ask_for_input()
-
-
-# List of words to use in the game
-word_list = ["Orange", "Mango", "Pineapple", "Raspberry", "Grapefruit"]
-
-# Initialize and play the game
-hangman_game = Hangman(word_list)
-hangman_game.play()
+if __name__ == '__main__':
+    # List of the words used in the game 
+    word_list = ["orange", "mango", "pineapple", "raspberry", "grapefruit"]
+    play_game(word_list)
