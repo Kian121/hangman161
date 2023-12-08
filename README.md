@@ -1,39 +1,32 @@
 # Hangman Game in Python
-{
-  "1. Introduction": {
-    "Overview": "Overview of the Hangman game",
-    "Objectives": "Objectives of the project",
-    "Learning Outcomes": "Key learning outcomes"
-  },
-  "2. Installation Instructions": {
-    "Requirements": "Requirements for installation",
-    "Installation Steps": "Steps to download and install the game"
-  },
-  "3. Usage Instructions": {
-    "Starting the Game": "How to start the game",
-    "Gameplay": "Basic gameplay instructions"
-  },
-  "4. File Structure": {
-    "Description": "Description of hangman.py"
-  },
-  "5. License": {
-    "License Overview": "MIT License overview",
-    "Copyright Notice": "Copyright notice",
-    "Permissions and Limitations": "Permissions and limitations"
-  }
-}
 
-## Introduction 
+## Table of Contents
+- [1. Introduction](#1-introduction)
+  - Overview of the Hangman game
+  - Objectives of the project
+  - Key learning outcomes
+- [2. Installation Instructions](#2-installation-instructions)
+  - Requirements for installation
+  - Steps to download and install the game
+- [3. Usage Instructions](#3-usage-instructions)
+  - Starting the Game
+  - Basic gameplay instructions
+- [4. File Structure](#4-file-structure)
+  - Description of `hangman.py`
+- [5. License](#5-license)
+  - MIT License overview
+  - Copyright notice
+  - Permissions and limitations
 
-This project is a simple text-based Hangman game implemented in Python. One letter at a time, the player must guess the word that the game randomly selects from an existing list.  The objective of the project is to illustrate basic concepts in Python programming, including classes, functions, and control structures.
+## 1. Introduction
 
-During the development of this project, I learned about the basic principles of user interaction and game design. Project debugging and refactoring for cleaner more optimised code and implementation of python classes and methods 
+This project is a simple text-based Hangman game implemented in Python. One letter at a time, the player must guess the word that the game randomly selects from an existing list.  The objective of the project is to illustrate basic concepts in Python programming, including classes, functions, and control structures. During the development of this project, I learned about the basic principles of user interaction and game design. Project debugging and refactoring for cleaner more optimised code and implementation of python classes and methods 
 
-## Installation Instructions 
+## 2. Installation Instructions 
 
 To play the Hangman game, you need to have Python installed on your computer. Once installed, you can download the source code for the Hangman game from this repository.
 
-## Usage Instructions
+## 3. Usage Instructions
 
 To start the game, navigate to the directory containing the script and run the following command in your terminal:
 
@@ -42,16 +35,17 @@ Copy code
 python hangman.py
 Follow the on-screen instructions to play the game
 
-## File Structure
+## 4. File Structure
 
 The project consists of a single Python script:
 
 hangman.py: This script contains the Hangman game logic, including class definitions and the main game loop.
 License
 
-## This project is licensed under the MIT License 
 
-Copyright (c) [2023] [Kian Semnani]
+## 5. License
+
+MIT License Copyright (c) [2023] [Kian Semnani]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
