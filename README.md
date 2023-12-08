@@ -1,4 +1,27 @@
 # Hangman Game in Python
+{
+  "1. Introduction": {
+    "Overview": "Overview of the Hangman game",
+    "Objectives": "Objectives of the project",
+    "Learning Outcomes": "Key learning outcomes"
+  },
+  "2. Installation Instructions": {
+    "Requirements": "Requirements for installation",
+    "Installation Steps": "Steps to download and install the game"
+  },
+  "3. Usage Instructions": {
+    "Starting the Game": "How to start the game",
+    "Gameplay": "Basic gameplay instructions"
+  },
+  "4. File Structure": {
+    "Description": "Description of hangman.py"
+  },
+  "5. License": {
+    "License Overview": "MIT License overview",
+    "Copyright Notice": "Copyright notice",
+    "Permissions and Limitations": "Permissions and limitations"
+  }
+}
 
 ## Introduction 
 
