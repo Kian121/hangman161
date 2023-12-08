@@ -19,32 +19,24 @@
   - Permissions and limitations
 
 ## 1. Introduction
-
 This project is a simple text-based Hangman game implemented in Python. One letter at a time, the player must guess the word that the game randomly selects from an existing list.  The objective of the project is to illustrate basic concepts in Python programming, including classes, functions, and control structures. During the development of this project, I learned about the basic principles of user interaction and game design. Project debugging and refactoring for cleaner more optimised code and implementation of python classes and methods 
 
 ## 2. Installation Instructions 
-
 To play the Hangman game, you need to have Python installed on your computer. Once installed, you can download the source code for the Hangman game from this repository.
 
 ## 3. Usage Instructions
-
 To start the game, navigate to the directory containing the script and run the following command in your terminal:
-
 bash
 Copy code
 python hangman.py
 Follow the on-screen instructions to play the game
 
 ## 4. File Structure
-
 The project consists of a single Python script:
-
 hangman.py: This script contains the Hangman game logic, including class definitions and the main game loop.
 License
 
-
 ## 5. License
-
 MIT License Copyright (c) [2023] [Kian Semnani]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
